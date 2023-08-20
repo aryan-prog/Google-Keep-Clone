@@ -18,14 +18,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const Notes = () => {
   const { notes, setNotes } = useContext(DataContext);
 
-  // const onDragEnd = (result) => {
-  //     if (!result.destination)
-  //       return;
-
-  //     const items = reorder(notes, result.source.index, result.destination.index);
-  //     setNotes(items);
-  // }
-
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
       <Box sx={{ p: 3, width: "100%" }}>
@@ -36,7 +28,7 @@ const Notes = () => {
             {
                 notes.map(note =>(
                     <Grid item>
-                        <Note  note={note}/>
+                        <Note note={note}/>
                     </Grid>
                 ))
             }
@@ -46,6 +38,7 @@ const Notes = () => {
         )}
       </Box>
     </Box>
+    
   );
 };
 
