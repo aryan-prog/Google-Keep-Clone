@@ -2,8 +2,6 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import HeaderBar from './HeaderBar';
 import NavList from './NavList';
 
@@ -66,13 +64,10 @@ export default function SwipeDrawer() {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
       <HeaderBar open={open} handleDrawer={handleDrawer}/>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-        </DrawerHeader>
-        <Divider />
-        <NavList open={open}/>  
+        <DrawerHeader></DrawerHeader>
+        <NavList/>  
       </Drawer>
     </Box>
   );
