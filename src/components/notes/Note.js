@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
-import { Card, CardContent, CardActions, Typography, Divider, Button, TextField } from '@mui/material';
+import { Card, CardContent, CardActions, Typography, Divider, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ArchiveOutlined as Archive, DeleteOutlineOutlined as Delete } from '@mui/icons-material';
-import {AcUnit as Hanuman} from '@mui/icons-material';
+// import {AcUnit as Hanuman} from '@mui/icons-material';
 import { DataContext } from '../../context/DataProvider';
 import NotesPopup from './NotesPopup';
 
@@ -31,11 +31,12 @@ const Note = ({ note }) => {
         setNotes(updatedNotes);
         setDeleteNotes(prevArr => [note, ...prevArr]);
     }
-    // const onTextChange = (e) => {
-    //     let changedNote = ;
-    //     setAddNote(changedNote);
-    // }
-    let originaltext=note.text;
+    const onTextChange = (e) => {
+        let changedNote = e.target.value;
+        console.log(changedNote);
+        setNotes(changedNote);
+    }
+    // let originaltext=note.text;
     return (
         <StyledCard>
                 <CardContent >
@@ -50,11 +51,11 @@ const Note = ({ note }) => {
                         onClick={() => archiveNote(note)}
                         
                     />
-                    <Hanuman
+                    {/* <Hanuman
                         fontSize="small"
                         style={{cursor: 'pointer'}}
                         onClick={() => setOpenPopup(true)}
-                    />
+                    /> */}
                     <Delete 
                         fontSize="small"
                         style={{cursor: 'pointer'}} 
@@ -70,10 +71,11 @@ const Note = ({ note }) => {
                     maxRows={Infinity}
                     variant="standard"
                     InputProps={{ disableUnderline: true }}
-                    onChange={(e) => {note.text={ ...originaltext, [e.target.name]: e.target.value }}}
+                    onChange={(e) => {onTextChange(e)}}
                     name='text'
                     value={note.text}/>                
                     </NotesPopup>
+                    {/* //note.text={ ...originaltext, [e.target.name]: e.target.value } */}
         </StyledCard>
     )
 }

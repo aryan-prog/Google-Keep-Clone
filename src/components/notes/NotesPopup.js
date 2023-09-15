@@ -1,4 +1,4 @@
-import { Dialog,DialogContent, DialogTitle,Button } from '@mui/material';
+import { Dialog,DialogContent,Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react'
 
@@ -7,7 +7,7 @@ display:flex;
 flex-direction: column;
 `
 function NotesPopup(props) {
-    const {title,children,openPopup,setOpenPopup}=props;
+    const {children,openPopup,setOpenPopup}=props;
 
     const handleClickOpen = () => {
         setOpenPopup(true);
