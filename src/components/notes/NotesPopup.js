@@ -9,9 +9,9 @@ flex-direction: column;
 function NotesPopup(props) {
     const {children,openPopup,setOpenPopup}=props;
 
-    const handleClickOpen = () => {
-        setOpenPopup(true);
-      };
+    // const handleClickOpen = () => {
+    //     setOpenPopup(true);
+    //   };
     
       const handleClose = () => {
         setOpenPopup(false);

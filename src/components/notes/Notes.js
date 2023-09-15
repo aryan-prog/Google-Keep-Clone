@@ -16,7 +16,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 const Notes = () => {
-  const { notes, setNotes } = useContext(DataContext);
+  const notes = useContext(DataContext);
 
   return (
     <Box sx={{ display: "flex", width: "100%" }}>
